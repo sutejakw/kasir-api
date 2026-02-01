@@ -191,6 +191,10 @@ func deleteCategory(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Category not found", http.StatusNotFound)
 }
 
+type Config struct {
+	Port string `mapstructure:"PORT"`
+}
+
 func main() {
 	http.HandleFunc("/api/produk/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "GET" {
